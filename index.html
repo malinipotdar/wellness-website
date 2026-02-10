@@ -111,22 +111,29 @@
 <section class="booking">
   <h2>Book a Healing Session</h2>
 
-  <form>
-    <!-- modify this form HTML and place wherever you want your form -->
-<form
-  action="https://formspree.io/f/xnjbnkka"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Submit Booking</button>
+ 
+  <form action="https://formspree.io/f/xnjbnkka" method="POST">
+    
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+
+    <input type="email" name="email" placeholder="Email Address" required>
+
+    <select name="service" required>
+      <option value="">Select Service</option>
+      <option>Stress Relief</option>
+      <option>Energy Healing</option>
+      <option>Emotional Healing</option>
+      <option>Meditation</option>
+    </select>
+
+    <textarea name="message" placeholder="Your Message"></textarea>
+
+    <button type="submit">Submit Booking</button>
+  </form>
+</section>
+
 
 </section>
 
@@ -138,7 +145,7 @@
   <p><strong>Location:</strong> Satara,Maharashtra, India</p>
 </section>
 
-<a href="https://wa.me/9130756315" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/8888509052" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
   💬
 </a>
 

@@ -18,7 +18,7 @@ h1, h2, h3 {
 .hero {
   background: linear-gradient(to right, #7fc2ee, #fed6e3);
   text-align: center;
-  padding: 80px 20px;
+  padding: 60px 20px;
   
     text-align: center;
     background-image: url("images/background.jpg");
@@ -31,8 +31,19 @@ h1, h2, h3 {
   color: rgb(212, 36, 36)
   }
   
-
-
+.logo {
+  display: block;
+  margin: 0 auto 15px;
+  width: 140px;        /* 👈 smaller, perfect size */
+  max-width: 60%;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
+}
+@media (max-width: 768px) {
+  .logo {
+    width: 80px;       /* 👈 smaller on mobile */
+  }
+}
 .hero h1 {
   font-size: 42px;
   margin-bottom: 10px;
@@ -40,8 +51,6 @@ h1, h2, h3 {
     text-shadow: 0 2px 6px rgba(0,0,0,0.25);
   }
   
-
-
 .hero p {
   font-size: 18px;
   .hero p {
@@ -65,7 +74,7 @@ h1, h2, h3 {
 }
 
 section {
-  padding: 50px 20px;
+  padding: 40px 20px;
   max-width: 1000px;
   margin: auto;
 }
@@ -80,15 +89,9 @@ h2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 15px;
+  color: #2011f1;
 }
 
-.service-box div {
-  background:  #6ae01c;
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-  
-}
 
 .why-us ul {
   list-style: none;
@@ -111,8 +114,6 @@ h2 {
   
 }
 
-
-
 footer {
   background: #2c7a7b;
   color: #fff;
@@ -124,66 +125,98 @@ footer {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #25d366;
+  width: 55px;
+  height: 55px;
+  background-color: #25D366;
   color: white;
-  font-size: 26px;
-  padding: 15px 18px;
   border-radius: 50%;
+  font-size: 28px;
+  text-align: center;
+  line-height: 55px;
   text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-.booking form {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
 }
 
+.whatsapp-float:hover {
+  background-color: #1ebe5d;
+}
+
+
+.booking {
+  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 25px;
+  max-width: 700px;
+  margin: 60px auto;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+.booking h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #4b1c6f;
+}
+
+/* Form layout */
+.booking form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Inputs */
 .booking input,
 .booking select,
 .booking textarea {
-  margin: 8px 0;
-  padding: 10px;
-  border-radius: 8px;
+  padding: 14px 16px;
+  border-radius: 12px;
   border: 1px solid #ccc;
-}
-
-.booking button {
-  margin-top: 15px;
-  padding: 12px;
-  background: #e962c7;
-  color: white;
-  border: none;
-  border-radius: 25px;
   font-size: 16px;
-  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
 }
-.logo {
-  
-   filter: drop-shadow(0 4px 8px rgba(173, 6, 48, 0.3));
-   
-    animation: fadeUp 3s ease;
-    
-    
-      display: block;
-      margin: 0 auto 15px;
-      width: 200px;        /* perfect desktop size */
-      max-width: 80%;
-      height: auto;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
-    }
-    
-    @media (max-width: 768px) {
-      .logo {
-        width: 100px;     /* perfect mobile size */
-      }
-    }
-      
-    
-  
-  
 
+/* Focus effect */
+.booking input:focus,
+.booking select:focus,
+.booking textarea:focus {
+  outline: none;
+  border-color: #4b1c6f;
+  box-shadow: 0 0 0 3px rgba(75, 28, 111, 0.15);
+}
 
+/* Textarea */
+.booking textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Submit button */
+.booking button {
+  margin-top: 10px;
+  padding: 14px;
+  background: linear-gradient(to right, #7b4397, #dc2430);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .booking {
+    padding: 40px 15px;
+  }
+}
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: 42px;
@@ -220,7 +253,7 @@ section {
 }
 .banner-img {
   width: 100%;
-  max-height: 380px;
+  max-height: 200px;
   object-fit: cover;
   border-radius: 25px;
   margin-bottom: 25px;
@@ -298,9 +331,6 @@ section {
   
 }
 
-
-
-
 /* Text section */
 .about-text h2 {
   font-size: 32px;
@@ -358,11 +388,25 @@ section {
   border-radius: 15px;  /* use 50% for circular */
 }
 
-.owner-name {
+.owner-Degree {
   margin-top: 10px;
   font-size: 18px;
   font-weight: 600;
   color: #9b7b3e;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  display: block;
+}
+
 
 
